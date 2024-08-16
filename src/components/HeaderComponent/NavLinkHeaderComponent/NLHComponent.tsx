@@ -10,7 +10,7 @@ type IProps = {
 const NlhComponent:FC<IProps> = ({path,children}) => {
     const pathname = usePathname()
     return (
-        <div>
+        <div className='headerwords'>
             <Link href={path} className={pathname === path ? 'active':'nonactive'}>{children}</Link>
         </div>
     );

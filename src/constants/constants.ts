@@ -4,4 +4,3 @@
 
  export const genreURl ='https://www.themoviedb.org/genre/'
 
- //https://api.themoviedb.org/3/discover/movie?with_genres=${}

@@ -1,9 +1,13 @@
 "use client"
+
 import React, {useEffect, useState} from 'react';
 import Link from "next/link";
-import {getMovies, searchService} from "@/services/api.service";
+import {getMovies} from "@/services/api.service";
 import {useSearchParams} from "next/navigation";
 import {MovieResponseModel} from "@/models/MovieResponseModel";
+
+import '@/app/movies/moviepage.css'
+
 const MoviesPage =  () => {
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -35,16 +39,34 @@ const MoviesPage =  () => {
 
     return (
         <div>
+            <div className='moviegrid'>
             {
                 movies.map(value =>
-                    <div key={value.id}>
-                        <Link href={{pathname: `/movies/'+ ${value.id}`, query: {data: JSON.stringify(value)}}}>
-                            <img src={`https://image.tmdb.org/t/p/w500/${value.poster_path}`}
-                                 alt=""/> {value.title}</Link></div>)
+                    <div key={value.id}  className='moviestyle'>
+                        <div className='movie-box'>
+                        <Link className='link-box' href={{pathname: `/movies/'+ ${value.id}`, query: {data: JSON.stringify(value)}}}>
+                            <div className='image-container'>
+                                <img src={`https://image.tmdb.org/t/p/w500/${value.poster_path}`} alt=""/>
+                            </div>
+
+                              <div className='title-box  cinzel-title-box'>
+                                 <h3>{value.title}</h3>
+                              </div>
+                        </Link>
+                        </div>
+                </div>)
             }
-            <div>
-                <button onClick={handlePreviousPage} disabled={currentPage === 1}>Previous</button>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
+            </div>
+            <div className='buttons-polygon'>
+                <div className='button-box'>
+                    <button className='button' onClick={handlePreviousPage} disabled={currentPage === 1}>Previous</button>
+                </div>
+                <div className='curr-box'>
+                    {currentPage}
+                </div>
+                <div className='button-box'>
+                     <button className='button' onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
+                </div>
             </div>
         </div>
     );

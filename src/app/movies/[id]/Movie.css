@@ -1,8 +1,63 @@
-.MiddleMoviePage{
-    display: flex;
-}
-.MovieInfo{
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.overview{
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    gap:1vh
+
+}
+.overview> h2{
+    display: flex;
+    justify-content: center;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.text{
+    display: flex;
+    text-align: center;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+.moviefullinfo{
+    display: flex;
+}
+.movieinfo{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.movieinfo > div{
+    margin-top: 3vh ;
+}
+
+.movieposter{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+}
+.title{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }

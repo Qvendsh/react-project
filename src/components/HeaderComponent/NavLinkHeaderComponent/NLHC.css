@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
 .active{
     color: silver;
+    text-decoration: none;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 .nonactive{
     color: black;
+    text-decoration: none;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }

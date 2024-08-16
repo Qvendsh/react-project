@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.genre-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.genre{
+    width: 12vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin-left: 2vw ;
+    margin-top: 3vh;
+    border-radius: 5%;
+    border: 2px solid white;
+}
+
+.link{
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+}

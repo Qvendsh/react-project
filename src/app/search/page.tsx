@@ -2,8 +2,15 @@
 import React, {useEffect, useState} from 'react';
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {searchService} from "@/services/api.service";
-import {MovieModel} from "@/models/MovieModel";
 import {SearchResultsModel} from "@/models/SearchResultsModel";
+
+
+
+import '@/app/search/search.css'
+import {MovieModel} from "@/models/MovieModel";
+import Link from "next/link";
+
+
 const Page =  (
     {placeholder}: {placeholder:string}) => {
 
@@ -19,11 +26,11 @@ const Page =  (
         const queryParam = searchParams.get('query');
         if (queryParam) {
             setQuery(queryParam);
-            fetchMovies(queryParam, currentPage);
+            fetchService(queryParam, currentPage);
         }
     }, [searchParams, currentPage]);
 
-    const fetchMovies = async (term: string, page: number) => {
+    const fetchService = async (term: string, page: number) => {
         const response:SearchResultsModel = await searchService(page,term);
         setMovies(response.results);
         setTotalPages(response.total_pages);
@@ -53,25 +60,46 @@ const Page =  (
         }
     };
 
-    return (
-        <div>
-            <label>search</label>
-            <input
+    return (<div>
+        <div className='searchdiv'>
+            <label className='textbox'>Search Movies</label>
+            <input className='searchbar'
                 value={query}
                 placeholder={placeholder}
                    onChange={(e) => {
                        handleSearch(e.target.value)
                    }}
             />
+            <div className='moviegrid'>
             {
-            movies.map(movie =><div key={movie.id}>
-                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
-                    {movie.name} </div>)
+            movies.map(movie =>
+                <div key={movie.id} className='moviestyle'>
+                    <div className='movie-box'>
+                        <Link className='link-box'
+                              href={{pathname: `/movies/'+ ${movie.id}`, query: {data: JSON.stringify(movie)}}}>
+                            <div className='image-container'>
+                                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
+                            </div>
+                            <div className='title-box  cinzel-title-box'>
+                               <h3> {movie.title}</h3>
+                            </div>
+                        </Link>
+                    </div>
+                </div>)
             }
-            <div>
-                <button onClick={handlePreviousPage} disabled={currentPage === 1}>Previous</button>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
             </div>
+        </div>
+               <div className='buttons-polygon'>
+                   <div className='button-box'>
+                      <button className='button' onClick={handlePreviousPage} disabled={currentPage === 1}>Previous</button>
+                  </div>
+                  <div className='curr-box'>
+                      {currentPage}
+                  </div>
+                  <div className='button-box'>
+                      <button className='button' onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
+                  </div>
+              </div>
         </div>
     );
 };

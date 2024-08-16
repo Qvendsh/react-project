@@ -44,21 +44,17 @@ export const getMoviesByGenre = async (id:number, page:number):Promise<MovieResp
 }
 
 
- export const searchService = async (page:number,query:string):Promise<SearchResultsModel> =>{
-    const response = await fetch(`https://api.themoviedb.org/3/search/keyword?query=${query}&page=${page}`,{
+ export const searchService = async (page:number,term:string):Promise<SearchResultsModel> =>{
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${term}&page=${page}`,{
         method:'GET',
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${accesToken}`
         }
     })
-    const data:SearchResultsModel = await response.json()
+     const data: SearchResultsModel = await response.json();
     return data
 }
 
 
 
-
-
-
-//https://api.themoviedb.org/3/discover/movie&with_genres=$%7Bid%7D

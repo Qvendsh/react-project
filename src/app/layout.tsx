@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import HeaderComponent from "@/components/HeaderComponent/HeaderComponent";
+import {link} from "node:fs";
+
 
 
 export const metadata: Metadata = {
@@ -15,11 +17,11 @@ type TProps ={
 export default function RootLayout({children,}: Readonly<TProps>) {
   return (
     <html lang="en">
-      <body>
-      <div className='headerdiv'>
-      <HeaderComponent/>
-      </div>
-      {children}
+    <body>
+    <div className='headerdiv'>
+        <HeaderComponent/>
+    </div>
+    {children}
       </body>
     </html>
   );
