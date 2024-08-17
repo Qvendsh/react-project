@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
+
+body.light.link {
+    color: black;
+}
+body.light.genre {
+    background-color: white;
+    border: 2px solid black;
+}
+
+body.dark.link {
+    color: white;
+}
+body.dark.genre {
+    background-color: black;
+}
+
+
+
 .genre-box{
     display: flex;
     flex-wrap: wrap;

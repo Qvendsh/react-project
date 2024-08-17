@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: grey;
+    background-color: #000000;
     justify-content: center;
     overflow-x: hidden;
 }
@@ -8,4 +8,14 @@ body{
     display: flex;
     justify-content: center;
     width: 100vw;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark{
+    background-color: black;
+    color: white;
 }

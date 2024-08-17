@@ -1,7 +1,12 @@
-export default function Home() {
-  return (
-    <main>
-      hello
-    </main>
-  );
-}
+import React from 'react';
+
+
+const Page = ({children}:{children: React.ReactNode}) => {
+    return (
+        <div>
+
+        </div>
+    );
+};
+
+export default Page;

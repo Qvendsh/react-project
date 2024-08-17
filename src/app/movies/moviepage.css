@@ -1,6 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
+body.light .cinzel-title-box {
+    color: black;
+}
+
+body.dark .cinzel-title-box {
+    color: white;
+}
 .moviegrid{
     display: flex;
     flex-wrap: wrap;

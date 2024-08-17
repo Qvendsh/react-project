@@ -28,9 +28,6 @@ export const getGenres = async (): Promise<GenreModel[]>=>{
     const data:MovieResponseModel = await response.json()
      return data
 }
-///discover/movie?with_genres=${num-genre}
-//?page=${page}
-//page:number = 1
 export const getMoviesByGenre = async (id:number, page:number):Promise<MovieResponseModel> =>{
     const response = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${id}&page=${page}`,{
         method:'GET',

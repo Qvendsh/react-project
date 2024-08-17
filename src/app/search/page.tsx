@@ -80,7 +80,7 @@ const Page =  (
                             <div className='image-container'>
                                 <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
                             </div>
-                            <div className='title-box  cinzel-title-box'>
+                            <div className='cinzel-title-box'>
                                <h3> {movie.title}</h3>
                             </div>
                         </Link>
@@ -89,6 +89,7 @@ const Page =  (
             }
             </div>
         </div>
+          {movies.length > 0 && (
                <div className='buttons-polygon'>
                    <div className='button-box'>
                       <button className='button' onClick={handlePreviousPage} disabled={currentPage === 1}>Previous</button>
@@ -99,7 +100,8 @@ const Page =  (
                   <div className='button-box'>
                       <button className='button' onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
                   </div>
-              </div>
+            </div>
+            )}
         </div>
     );
 };
