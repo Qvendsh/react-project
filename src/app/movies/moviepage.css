@@ -18,10 +18,9 @@ body.dark .cinzel-title-box {
 
 .moviestyle{
     width: 18vw ;
-    height: 46vh;
+    height: 54vh;
     display: flex;
     justify-content: center;
-
 }
 
 .movie-box{
@@ -33,7 +32,7 @@ body.dark .cinzel-title-box {
 }
 .image-container {
     width: 80%;
-    height: 80%;
+    height: 68%;
 
 }
 .image-container > img {
@@ -42,14 +41,12 @@ body.dark .cinzel-title-box {
     object-fit: cover;
 }
 
-.title-box{
+.cinzel-title-box {
     height:10vh;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-right: 2vw;
-}
-.cinzel-title-box {
     font-family: "Cinzel", serif;
     font-optical-sizing: auto;
     font-weight: 400;

@@ -5,6 +5,7 @@ import Link from "next/link";
 import {MovieResponseModel} from "@/models/MovieResponseModel";
 
 import '@/app/movies/moviepage.css'
+import StarsRating from "@/components/StarsRatingComponent/StarsRating";
 
 
 const Page  = ({searchParams}:any) => {
@@ -48,6 +49,9 @@ const Page  = ({searchParams}:any) => {
                         <Link className='link-box' href={{pathname: '/movies/' + movie.id, query: {data: JSON.stringify(movie)}}}>
                             <div className='image-container'>
                               <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt=""/>
+                            </div>
+                            <div>
+                                <StarsRating rating={movie.vote_average} />
                             </div>
                             <div className='title-box  cinzel-title-box'>
                                <h3> {movie.title}</h3>

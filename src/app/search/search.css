@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
-body.light.cinzel-title-box> h3 {
+body.light.link-box {
     color: black;
 }
 
-body.dark.cinzel-title-box > h3{
+body.dark.link-box {
     color: white;
 }
 
@@ -36,13 +36,13 @@ body.dark.cinzel-title-box > h3{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5vh;
+    gap: 7vh;
 
 }
 
 .moviestyle{
     width: 18vw ;
-    height: 46vh;
+    height: 52vh;
     display: flex;
     justify-content: center;
 
@@ -66,13 +66,6 @@ body.dark.cinzel-title-box > h3{
     object-fit: cover;
 }
 
-/*.title-box{*/
-/*    height:10vh;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    text-align: center;*/
-/*    margin-right: 2vw;*/
-/*}*/
 .cinzel-title-box {
     height:10vh;
     justify-content: center;
@@ -123,6 +116,6 @@ body.dark.cinzel-title-box > h3{
 
 .link-box{
     text-decoration: none;
-    color: white;
+    color: chocolate;
 }
 

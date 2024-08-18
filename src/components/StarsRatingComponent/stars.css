@@ -1,0 +1,23 @@
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-size: 24px;
+    color: #e3e3e3;
+}
+
+.stars-outer::before {
+    content: "★★★★★";
+}
+
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: gold;
+}
+
+.stars-inner::before {
+    content: "★★★★★";
+}

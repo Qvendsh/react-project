@@ -3,12 +3,9 @@ import React, {useEffect, useState} from 'react';
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {searchService} from "@/services/api.service";
 import {SearchResultsModel} from "@/models/SearchResultsModel";
-
-
-
 import '@/app/search/search.css'
-import {MovieModel} from "@/models/MovieModel";
 import Link from "next/link";
+import StarsRating from "@/components/StarsRatingComponent/StarsRating";
 
 
 const Page =  (
@@ -79,6 +76,9 @@ const Page =  (
                               href={{pathname: `/movies/'+ ${movie.id}`, query: {data: JSON.stringify(movie)}}}>
                             <div className='image-container'>
                                 <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
+                            </div>
+                            <div>
+                                <StarsRating rating={movie.vote_average} />
                             </div>
                             <div className='cinzel-title-box'>
                                <h3> {movie.title}</h3>

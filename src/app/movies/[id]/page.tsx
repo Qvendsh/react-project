@@ -2,6 +2,7 @@
 
 import React from 'react';
 import '@/app/movies/[id]/Movie.css'
+import StarsRating from "@/components/StarsRatingComponent/StarsRating";
 
 
 const MovieInfo = ({searchParams}:any) => {
@@ -13,8 +14,8 @@ const url ='https://image.tmdb.org/t/p/w500/'
             <div className='moviefullinfo'>
                     <div className='movieposter'>{<img src={`${url}${movie?.backdrop_path}`}/>}</div>
                     <div className='movieinfo'>
-                        <div>release date:{movie?.release_date}</div>
-                        <div> genres: {movie?.genre_ids}</div>
+                        <div>release date : {movie?.release_date}</div>
+                        <div> rating: <StarsRating rating={movie.vote_average} /></div>
                     </div>
             </div>
 

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 
 import './Header.css'
 import NLHComponent from "@/components/HeaderComponent/NavLinkHeaderComponent/NLHComponent";

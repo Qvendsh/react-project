@@ -7,6 +7,7 @@ import {useSearchParams} from "next/navigation";
 import {MovieResponseModel} from "@/models/MovieResponseModel";
 
 import '@/app/movies/moviepage.css'
+import StarsRating from "@/components/StarsRatingComponent/StarsRating";
 
 const MoviesPage =  () => {
 
@@ -48,8 +49,10 @@ const MoviesPage =  () => {
                             <div className='image-container'>
                                 <img src={`https://image.tmdb.org/t/p/w500/${value.poster_path}`} alt=""/>
                             </div>
-
-                              <div className='title-box  cinzel-title-box'>
+                            <div>
+                                <StarsRating rating={value.vote_average} />
+                            </div>
+                              <div className='cinzel-title-box'>
                                  <h3>{value.title}</h3>
                               </div>
                         </Link>
